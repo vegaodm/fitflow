@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>How insights work — Spendly FitFlow</title>
+<meta name="description" content="How Spendly FitFlow turns logged nights into sleep insights, what the sample gates mean, and why a finding is a comparison rather than a cause.">
+<meta name="theme-color" content="#141334">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23141334'/%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='%23FF9F45' stroke-width='7' stroke-dasharray='60 12'/%3E%3C/svg%3E">
+<style>
+  :root {
+    --ink: #14161f;
+    --muted: #5b6070;
+    --line: #e4e6ee;
+    --bg: #f6f7fb;
+    --card: #ffffff;
+    --accent: #e07a2f;
+    --night: #141334;
+    --radius: 16px;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  }
+  header { background: var(--night); color: #fff; padding: 40px 20px 32px; }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
+  header .wrap { padding: 0; }
+  .mark { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
+  .mark svg { width: 40px; height: 40px; flex: none; }
+  .mark span { font-weight: 650; letter-spacing: -0.01em; }
+  h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.02em; }
+  header p { margin: 0; color: #b9bdd6; font-size: 0.95rem; }
+  nav { border-bottom: 1px solid var(--line); background: var(--card); position: sticky; top: 0; z-index: 5; }
+  nav .wrap { display: flex; gap: 22px; padding: 14px 20px; overflow-x: auto; }
+  nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 550; white-space: nowrap; }
+  nav a[aria-current="page"] { color: var(--accent); }
+  main { padding: 32px 0 8px; }
+  section {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px 24px;
+    margin-bottom: 16px;
+  }
+  h2 { font-size: 1.05rem; margin: 0 0 12px; letter-spacing: -0.01em; }
+  h3 { font-size: 0.98rem; margin: 18px 0 6px; }
+  h3:first-of-type { margin-top: 0; }
+  p, li { margin: 0 0 10px; }
+  p:last-child, ul:last-child, ol:last-child, li:last-child { margin-bottom: 0; }
+  ul, ol { padding-left: 1.2em; }
+  li { margin-bottom: 7px; }
+  strong { font-weight: 650; }
+  a { color: var(--accent); }
+  .note {
+    border-left: 3px solid var(--accent);
+    background: #fdf6f0;
+    padding: 14px 16px;
+    border-radius: 0 10px 10px 0;
+    margin: 14px 0 0;
+    font-size: 0.95rem;
+  }
+  .steps { counter-reset: step; list-style: none; padding-left: 0; }
+  .steps li {
+    counter-increment: step;
+    position: relative;
+    padding-left: 40px;
+    margin-bottom: 16px;
+  }
+  .steps li::before {
+    content: counter(step);
+    position: absolute;
+    left: 0;
+    top: 1px;
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    background: var(--night);
+    color: #fff;
+    font-size: 0.8rem;
+    font-weight: 650;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  table { width: 100%; border-collapse: collapse; font-size: 0.94rem; }
+  th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
+  th { font-weight: 650; color: var(--muted); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.04em; }
+  tr:last-child td { border-bottom: none; }
+  code {
+    font: 0.88em ui-monospace, SFMono-Regular, Menlo, monospace;
+    background: #eef0f6;
+    padding: 1px 5px;
+    border-radius: 5px;
+  }
+  footer { color: var(--muted); font-size: 0.86rem; padding: 26px 0 46px; }
+  footer .wrap { padding: 0 20px; }
+  footer a { color: var(--muted); }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --ink: #e9ebf4;
+      --muted: #9aa0b4;
+      --line: #262a3a;
+      --bg: #0b0c15;
+      --card: #14161f;
+    }
+    .note { background: #201a17; }
+    code { background: #22263a; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="mark">
+      <svg viewBox="0 0 100 100" aria-hidden="true">
+        <g fill="none" stroke-width="8" stroke-linecap="round" transform="rotate(-90 50 50)">
+          <circle cx="50" cy="50" r="34" stroke="#FF9F45" stroke-dasharray="63.2 150.4" stroke-dashoffset="0"/>
+          <circle cx="50" cy="50" r="34" stroke="#3FD69B" stroke-dasharray="63.2 150.4" stroke-dashoffset="-71.2"/>
+          <circle cx="50" cy="50" r="34" stroke="#8E9DFF" stroke-dasharray="63.2 150.4" stroke-dashoffset="-142.4"/>
+        </g>
+      </svg>
+      <span>Spendly FitFlow</span>
+    </div>
+    <h1>How insights work</h1>
+    <p>What the sleep tab compares, when it stays quiet, and what a finding is not</p>
+  </div>
+</header>
+
+<nav>
+  <div class="wrap">
+    <a href="index.html">Privacy</a>
+    <a href="support.html">Support</a>
+    <a href="insights.html" aria-current="page">How insights work</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <section>
+    <p><strong>The short version.</strong> The app compares the nights where you tagged a factor
+    against the nights where you did not, on one measure at a time. It only speaks when both groups
+    are big enough and the difference is bigger than noise. It never claims a cause.</p>
+    <div class="note">
+      An insight is a comparison in <em>your own</em> log, not medical advice and not a diagnosis.
+      If sleep is a persistent problem, talk to a clinician rather than an app.
+    </div>
+  </section>
+
+  <section>
+    <h2>What gets compared</h2>
+    <p>Every night records four numbers, and each insight is about exactly one of them:</p>
+    <table>
+      <tr>
+        <th>Measure</th>
+        <th>What it is</th>
+      </tr>
+      <tr>
+        <td>Time fell asleep</td>
+        <td>Bedtime as a point on one timeline, so 23:30 and 00:15 are 45 minutes apart rather than
+        a day apart.</td>
+      </tr>
+      <tr>
+        <td>Time asleep</td>
+        <td>Wake time minus bedtime, in minutes.</td>
+      </tr>
+      <tr>
+        <td>Wakings</td>
+        <td>How many times you remember waking.</td>
+      </tr>
+      <tr>
+        <td>Energy</td>
+        <td>Your own 1–5 rating of the morning.</td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>Two kinds of finding</h2>
+    <h3>Presence</h3>
+    <p>“On nights with caffeine within 2h of bed, you fell asleep 38 min later.”</p>
+    <p>Compares nights where the factor was tagged <em>at all</em> against nights where it was not.</p>
+    <h3>Timing</h3>
+    <p>“Exercise in the evening is followed by 22 min more sleep than exercise in the morning.”</p>
+    <p>Compares two of the four time buckets — morning, afternoon, evening, within 2h of bed —
+    for the same factor. This is the more useful one, and it needs more nights to be trustworthy.</p>
+  </section>
+
+  <section>
+    <h2>When the app stays quiet</h2>
+    <p>A comparison is only shown when all of these hold:</p>
+    <ol class="steps">
+      <li><strong>Enough nights on both sides.</strong> Free users need 3 nights with the factor and
+      3 without, and 5 nights in total. With Lifetime Membership it is 5 and 5, and 14 in total.</li>
+      <li><strong>A difference worth mentioning.</strong> 15 minutes for bedtime and duration, half
+      a waking for wakings, 0.3 points for energy. Below that the app shows nothing rather than a
+      number too small to act on.</li>
+      <li><strong>The window is long enough.</strong> A paid user looking at a 7-day window still
+      gets the stricter free gate, because 14 nights cannot fit in a week.</li>
+    </ol>
+    <p>So an empty Insights tab after four nights is the app working correctly, not failing. Five
+    nights is the first useful comparison; two weeks is where timing findings become worth reading.</p>
+  </section>
+
+  <section>
+    <h2>Why findings are ranked the way they are</h2>
+    <p>Insights are ordered by a standardised effect size with a small-sample penalty: a finding
+    from 4 nights against 4 is shrunk toward zero more than the same difference from 20 against 20.
+    That keeps a dramatic-looking fluke from sitting at the top of the list.</p>
+    <p>The card always prints the two averages and the number of nights behind each, so you can
+    judge the evidence yourself rather than trusting a ranking.</p>
+  </section>
+
+  <section>
+    <h2>How to log well</h2>
+    <ul>
+      <li><strong>Tag the same factors consistently.</strong> If you tag caffeine some nights and
+      forget on others, the “without caffeine” group is polluted and the comparison weakens.</li>
+      <li><strong>Log the morning you wake, not later.</strong> Duration and bedtime are exact; the
+      energy rating is a memory, and memories drift by the afternoon.</li>
+      <li><strong>Two weeks beats two months of gaps.</strong> Consecutive nights are worth more
+      than a long, sparse history.</li>
+      <li><strong>Change one thing at a time.</strong> If you cut caffeine and start exercising in
+      the same week, the app cannot tell you which one mattered — and neither can the data.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>The optional AI brief</h2>
+    <p>The Insights screen can hand a plain-text summary of your last two weeks to an AI assistant
+    you choose. The summary contains your dates, sleep times, duration, wakings, energy ratings,
+    factor tags and any note you wrote.</p>
+    <ul>
+      <li>It is sent only when you tap the button, and only to the app you pick.</li>
+      <li>Spendly FitFlow itself sends nothing and stores no API key — see the
+      <a href="index.html">privacy policy</a>.</li>
+      <li>Once handed over, the receiving service's terms apply.</li>
+      <li>Notes are included. Do not write anything in a sleep note you would not want a third
+      party to read.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>What an insight is not</h2>
+    <ul>
+      <li>It is not a diagnosis, and it is not a substitute for a sleep study.</li>
+      <li>It is not proof of cause. Two things moving together in one person's log can share a
+      third cause — a stressful week moves caffeine, alcohol, bedtime and energy at once.</li>
+      <li>It is not comparable to anyone else's numbers. The gates, the baselines and the buckets
+      are all yours.</li>
+      <li>It is not a medical device. Nothing here measures sleep stages, breathing or oxygen.</li>
+    </ul>
+    <p>If you snore heavily, wake gasping, or feel sleepy while driving, see a doctor. An app that
+    asks you to tap “Start” when you get into bed cannot see any of that.</p>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Spendly FitFlow · <a href="index.html">Privacy</a> · <a href="support.html">Support</a> · <a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a></p>
+    <p>Insights are comparisons within your own log. They are not medical advice.</p>
+  </div>
+</footer>
+
+</body>
+</html>
