@@ -144,6 +144,47 @@
   </section>
 
   <section>
+    <h2 data-i18n="sup.energy.title">How burned calories are worked out</h2>
+    <p data-i18n="sup.energy.intro">Two kinds of burned energy appear in the Exercise sheet, and they
+    are produced in completely different ways. Both count towards the same day's budget.</p>
+
+    <h3 data-i18n="sup.energy.manual.t">Manual exercise — you type the number</h3>
+    <p data-i18n="sup.energy.manual.b">Add exercise asks for a name, a duration and the calories
+    burned. The app stores exactly what you enter and does no arithmetic. It has no way to know how
+    hard a swim or a gym session was, so guessing would be worse than asking.</p>
+
+    <h3 data-i18n="sup.energy.run.t">A finished run — calculated from the route</h3>
+    <p data-i18n="sup.energy.run.b" data-i18n-html>When a run stops, its energy is worked out once and
+    written to the database with the profile it used. It is never typed, and never recalculated
+    later.</p>
+
+    <div class="note" data-i18n="sup.energy.formula.b" data-i18n-html>
+      <strong>1 · MET</strong> — average moving speed, looked up in the Compendium of Physical
+      Activities table.<br>
+      <strong>2 · Gross cost</strong> — MET × 3.5 × weight in kg ÷ 200 × moving minutes. This is the
+      ACSM running equation.<br>
+      <strong>3 · Age and sex</strong> — your basal rate divided by that of a 30-year-old of the same
+      height and weight, clamped between 0.90 and 1.10.<br>
+      <strong>4 · Result</strong> — the product, rounded.
+    </div>
+
+    <p style="margin-top:14px" data-i18n="sup.energy.example">A 70 kg, 30-year-old male running 5 km in
+    30 minutes averages 10 km/h, which is 10.1 MET. That gives 10.1 × 3.5 × 70 ÷ 200 × 30 = 370 kcal,
+    and the age-and-sex factor is 1.00 because he is the reference person.</p>
+
+    <p data-i18n="sup.energy.tap">Tap any run in the Exercise sheet to see this working for that run,
+    step by step, along with the weight, age and sex it used.</p>
+
+    <p data-i18n="sup.energy.snapshot">Those three values are copied from your profile when the run
+    ends. Changing your weight afterwards does not rewrite past runs — the history stays as it
+    happened. Editing your weight does change the next run, and your daily target, immediately.</p>
+
+    <p data-i18n="sup.energy.gross">The figure is gross, not net of resting metabolism. That is the
+    same convention as the daily target, so the two can be subtracted from each other without a
+    correction nobody would remember to apply.</p>
+  </section>
+
+  <section>
     <h2 data-i18n="sup.loc.title">Location and background recording</h2>
     <ul>
       <li><span class="lead" data-i18n="sup.loc.b1a" data-i18n-html>Allow <strong>Precise Location</strong>.</span>
