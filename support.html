@@ -7,92 +7,7 @@
 <meta name="description" content="Support for Spendly FitFlow: getting started, restoring your purchase, backup and restore, deleting data, and how to reach us.">
 <meta name="theme-color" content="#141334">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23141334'/%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='%23FF9F45' stroke-width='7' stroke-dasharray='60 12'/%3E%3C/svg%3E">
-<style>
-  :root {
-    --ink: #14161f;
-    --muted: #5b6070;
-    --line: #e4e6ee;
-    --bg: #f6f7fb;
-    --card: #ffffff;
-    --accent: #e07a2f;
-    --night: #141334;
-    --radius: 16px;
-  }
-  * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  }
-  header { background: var(--night); color: #fff; padding: 40px 20px 32px; }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
-  header .wrap { padding: 0; }
-  .mark { display: flex; align-items: center; gap: 12px; margin-bottom: 18px; }
-  .mark svg { width: 40px; height: 40px; flex: none; }
-  .mark span { font-weight: 650; letter-spacing: -0.01em; }
-  h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.02em; }
-  header p { margin: 0; color: #b9bdd6; font-size: 0.95rem; }
-  nav { border-bottom: 1px solid var(--line); background: var(--card); position: sticky; top: 0; z-index: 5; }
-  nav .wrap { display: flex; gap: 22px; padding: 14px 20px; overflow-x: auto; }
-  nav a { color: var(--muted); text-decoration: none; font-size: 0.9rem; font-weight: 550; white-space: nowrap; }
-  nav a[aria-current="page"] { color: var(--accent); }
-  main { padding: 32px 0 8px; }
-  section {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 22px 24px;
-    margin-bottom: 16px;
-  }
-  h2 { font-size: 1.05rem; margin: 0 0 12px; letter-spacing: -0.01em; }
-  h3 { font-size: 0.98rem; margin: 18px 0 6px; }
-  h3:first-of-type { margin-top: 0; }
-  p, li { margin: 0 0 10px; }
-  p:last-child, ul:last-child, ol:last-child, li:last-child { margin-bottom: 0; }
-  ul, ol { padding-left: 1.2em; }
-  li { margin-bottom: 7px; }
-  strong { font-weight: 650; }
-  a { color: var(--accent); }
-  .contact {
-    background: var(--night);
-    color: #fff;
-    border: none;
-  }
-  .contact h2 { color: #fff; }
-  .contact p { color: #c6cae0; }
-  .contact a { color: #ffb877; font-weight: 650; }
-  .note {
-    border-left: 3px solid var(--accent);
-    background: #fdf6f0;
-    padding: 14px 16px;
-    border-radius: 0 10px 10px 0;
-    margin: 14px 0 0;
-    font-size: 0.95rem;
-  }
-  code {
-    font: 0.88em ui-monospace, SFMono-Regular, Menlo, monospace;
-    background: #eef0f6;
-    padding: 1px 5px;
-    border-radius: 5px;
-  }
-  .path { color: var(--muted); }
-  footer { color: var(--muted); font-size: 0.86rem; padding: 26px 0 46px; }
-  footer .wrap { padding: 0 20px; }
-  footer a { color: var(--muted); }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #e9ebf4;
-      --muted: #9aa0b4;
-      --line: #262a3a;
-      --bg: #0b0c15;
-      --card: #14161f;
-    }
-    .note { background: #201a17; }
-    code { background: #22263a; }
-  }
-</style>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 
@@ -108,170 +23,210 @@
       </svg>
       <span>Spendly FitFlow</span>
     </div>
-    <h1>Support</h1>
-    <p>Meals, runs and nights in one diary — everything you need to get going</p>
+    <h1 data-i18n="sup.title">Support</h1>
+    <p data-i18n="sup.subtitle">Meals, runs and nights in one diary — everything you need to get going</p>
   </div>
 </header>
 
 <nav>
   <div class="wrap">
-    <a href="index.html">Privacy</a>
-    <a href="support.html" aria-current="page">Support</a>
-    <a href="insights.html">How insights work</a>
+    <a href="index.html" data-i18n="nav.privacy">Privacy</a>
+    <a href="support.html" aria-current="page" data-i18n="nav.support">Support</a>
+    <a href="insights.html" data-i18n="nav.insights">How insights work</a>
+    <span class="spacer"></span>
+    <label class="lang">
+      <span class="visually-hidden" data-i18n="lang.label">Language</span>
+      <select data-lang-picker aria-label="Language">
+        <option value="en">English</option>
+        <option value="de">Deutsch</option>
+        <option value="fr">Français</option>
+        <option value="es">Español</option>
+      </select>
+    </label>
   </div>
 </nav>
 
 <main class="wrap">
 
   <section class="contact">
-    <h2>Contact us</h2>
-    <p>Email <a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a></p>
-    <p>We answer in English, usually within two working days. To make it quick, please include:</p>
-    <ul style="color:#c6cae0">
-      <li>what you expected to happen, and what happened instead;</li>
-      <li>the app version and build — Settings → About → Version;</li>
-      <li>your iOS version and device model.</li>
-    </ul>
-    <p style="margin-top:14px">There is no account, so we cannot look your data up. Anything you can
-    describe, or a screenshot, is what we have to work with.</p>
-  </section>
-
-  <section>
-    <h2>Getting started</h2>
-    <p>The app opens on <strong>Food</strong>. There are three tabs:</p>
+    <h2 data-i18n="sup.contact.title">Contact us</h2>
+    <p><span data-i18n="sup.contact.email">Email</span>
+      <a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a></p>
+    <p data-i18n="sup.contact.intro">We answer in English, usually within two working days. To make
+    it quick, please include:</p>
     <ul>
-      <li><strong>Food</strong> (left) — today's diary, the calorie ring and the food library.</li>
-      <li><strong>Running</strong> (middle) — record a route, see pace, splits and elevation.</li>
-      <li><strong>Sleep</strong> (right) — log a night and see what moves it.</li>
+      <li data-i18n="sup.contact.b1">what you expected to happen, and what happened instead;</li>
+      <li data-i18n="sup.contact.b2">the app version and build — Settings → About → Version;</li>
+      <li data-i18n="sup.contact.b3">your iOS version and device model.</li>
     </ul>
-    <p>Settings is the <strong>gear in the middle of the top bar</strong> on the Food tab. It is not
-    a fourth tab: the three tab slots belong to the three features.</p>
-    <h3>First thing to do</h3>
-    <p>Open Settings → Goals and set your sex, birth year, height and weight. Those four numbers are
-    what turn a run into calories and a goal into a daily target. Until they are set, the app uses a
-    neutral default and every number will be off.</p>
+    <p style="margin-top:14px" data-i18n="sup.contact.outro">There is no account, so we cannot look
+    your data up. Anything you can describe, or a screenshot, is what we have to work with.</p>
   </section>
 
   <section>
-    <h2>Free records and Lifetime Membership</h2>
-    <p>The app is free to download with a shared budget of <strong>eight records</strong>. A record
-    is one new row: a meal, a logged exercise, a weigh-in, a run, or a night. The eight are shared
-    across all three features, and the Food tab shows how many are left.</p>
+    <h2 data-i18n="sup.start.title">Getting started</h2>
+    <p data-i18n="sup.start.intro" data-i18n-html>The app opens on <strong>Food</strong>. There are
+    three tabs:</p>
     <ul>
-      <li>Editing an existing record does <strong>not</strong> spend the budget.</li>
-      <li>The 152-item reference food library and your personal targets are free and do not count.</li>
-      <li>Lifetime Membership is a <strong>one-time</strong> purchase, not a subscription. It
-      removes the cap and unlocks the week/month/year statistics, the database backup and the longer
-      sleep insight windows.</li>
+      <li data-i18n="sup.start.b1" data-i18n-html><strong>Food</strong> (left) — today's diary, the
+      calorie ring and the food library.</li>
+      <li data-i18n="sup.start.b2" data-i18n-html><strong>Running</strong> (middle) — record a route,
+      see pace, splits and elevation.</li>
+      <li data-i18n="sup.start.b3" data-i18n-html><strong>Sleep</strong> (right) — log a night and
+      see what moves it.</li>
     </ul>
-    <h3>Restoring a purchase</h3>
-    <p>Settings → Membership → <strong>Restore purchases</strong>. This also appears on the paywall.
-    If nothing is found, make sure you are signed in to the same Apple Account you bought with.</p>
-    <h3>If the price will not load</h3>
-    <p>The paywall needs a connection the first time so Apple can return the local price. If it
-    shows a fallback price or an error, check your connection and reopen the screen.</p>
+    <p data-i18n="sup.start.settings" data-i18n-html>Settings is the <strong>gear in the middle of
+    the top bar</strong> on the Food tab. It is not a fourth tab: the three tab slots belong to the
+    three features.</p>
+    <h3 data-i18n="sup.start.first.t">First thing to do</h3>
+    <p data-i18n="sup.start.first.b">Open Settings → Goals and set your sex, birth year, height and
+    weight. Those four numbers are what turn a run into calories and a goal into a daily target.
+    Until they are set, the app uses a neutral default and every number will be off.</p>
   </section>
 
   <section>
-    <h2>Backup and restore</h2>
-    <p>Settings → Backup writes <strong>the whole database</strong> — meals, runs and nights in one
-    SQLite file — to a location you pick in the Files app. Restoring replaces the current database
-    with that file, so back up before you restore something old.</p>
-    <div class="note">
-      The running tab no longer has its own import or export. A second path over the same file
-      would race this one, and the older formats are not compatible with this app's database.
-    </div>
-    <p>Your photos and voice notes are separate files under
-    <span class="path">Files → On My iPhone → FitFlow → FitFlow</span>. A database backup does not
-    include them, so copy that folder as well if you want them.</p>
+    <h2 data-i18n="sup.records.title">Free records and Lifetime Membership</h2>
+    <p data-i18n="sup.records.intro" data-i18n-html>The app is free to download with a shared budget
+    of <strong>eight records</strong>. A record is one new row: a meal, a logged exercise, a
+    weigh-in, a run, or a night. The eight are shared across all three features, and the Food tab
+    shows how many are left.</p>
+    <ul>
+      <li data-i18n="sup.records.b1" data-i18n-html>Editing an existing record does <strong>not</strong>
+      spend the budget.</li>
+      <li data-i18n="sup.records.b2">The 152-item reference food library and your personal targets
+      are free and do not count.</li>
+      <li data-i18n="sup.records.b3" data-i18n-html>Lifetime Membership is a <strong>one-time</strong>
+      purchase, not a subscription. It removes the cap and unlocks the week/month/year statistics,
+      the database backup and the longer sleep insight windows.</li>
+    </ul>
+    <h3 data-i18n="sup.records.restore.t">Restoring a purchase</h3>
+    <p data-i18n="sup.records.restore.b" data-i18n-html>Settings → Membership →
+    <strong>Restore purchases</strong>. This also appears on the paywall. If nothing is found, make
+    sure you are signed in to the same Apple Account you bought with.</p>
+    <h3 data-i18n="sup.records.price.t">If the price will not load</h3>
+    <p data-i18n="sup.records.price.b">The paywall needs a connection the first time so Apple can
+    return the local price. If it shows a fallback price or an error, check your connection and
+    reopen the screen.</p>
   </section>
 
   <section>
-    <h2>Why a run did not change my calorie budget</h2>
-    <p>A run only counts once it has <strong>finished</strong> and has at least two track points. If
-    it was discarded for having no usable route, no calories are written.</p>
-    <p>If the number looks wrong, check these in order:</p>
+    <h2 data-i18n="sup.backup.title">Backup and restore</h2>
+    <p data-i18n="sup.backup.p1" data-i18n-html>Settings → Backup writes <strong>the whole
+    database</strong> — meals, runs and nights in one SQLite file — to a location you pick in the
+    Files app. Restoring replaces the current database with that file, so back up before you restore
+    something old.</p>
+    <div class="note" data-i18n="sup.backup.note">The running tab no longer has its own import or
+    export. A second path over the same file would race this one, and the older formats are not
+    compatible with this app's database.</div>
+    <p style="margin-top:14px"><span data-i18n="sup.backup.p2a">Your photos and voice notes are
+    separate files under</span>
+    <span class="path">Files → On My iPhone → FitFlow → FitFlow</span>.
+    <span data-i18n="sup.backup.p2b">A database backup does not include them, so copy that folder as
+    well if you want them.</span></p>
+  </section>
+
+  <section>
+    <h2 data-i18n="sup.run.title">Why a run did not change my calorie budget</h2>
+    <p><span data-i18n="sup.run.p1a" data-i18n-html>A run only counts once it has
+    <strong>finished</strong> and has at least two track points.</span>
+    <span data-i18n="sup.run.p1b">If it was discarded for having no usable route, no calories are
+    written.</span></p>
+    <p data-i18n="sup.run.p2">If the number looks wrong, check these in order:</p>
     <ol>
-      <li>Settings → Goals — weight, height, age and sex. The estimate is per kilogram of body
-      weight, so a stale weight shifts every run.</li>
-      <li>Whether the run actually finished, in the Running tab.</li>
-      <li>Whether the run's day is the day you are looking at. A run started before midnight
-      belongs to the day it started.</li>
+      <li data-i18n="sup.run.b1">Settings → Goals — weight, height, age and sex. The estimate is per
+      kilogram of body weight, so a stale weight shifts every run.</li>
+      <li data-i18n="sup.run.b2">Whether the run actually finished, in the Running tab.</li>
+      <li data-i18n="sup.run.b3">Whether the run's day is the day you are looking at. A run started
+      before midnight belongs to the day it started.</li>
     </ol>
-    <p>Calories are frozen when a run ends. Editing your weight later does not rewrite past runs —
-    that is deliberate, so history stays auditable.</p>
+    <p data-i18n="sup.run.p3">Calories are frozen when a run ends. Editing your weight later does
+    not rewrite past runs — that is deliberate, so history stays auditable.</p>
   </section>
 
   <section>
-    <h2>Location and background recording</h2>
+    <h2 data-i18n="sup.loc.title">Location and background recording</h2>
     <ul>
-      <li>Allow <strong>Precise Location</strong>. With it off, iOS reports roughly 5 km accuracy
-      and no route can be drawn.</li>
-      <li>Allow <strong>Always</strong> if you want the route to keep recording with the screen
-      locked or the app in the background.</li>
-      <li>If the status shows <em>Searching</em> for a long time, you are indoors or in a street
-      canyon. Step outside; the recorder keeps trying.</li>
-      <li>Low Power Mode can throttle location updates. For a long run, turn it off.</li>
+      <li><span class="lead" data-i18n="sup.loc.b1a" data-i18n-html>Allow <strong>Precise Location</strong>.</span>
+      <span data-i18n="sup.loc.b1b">With it off, iOS reports roughly 5 km accuracy and no route can
+      be drawn.</span></li>
+      <li><span class="lead" data-i18n="sup.loc.b2a" data-i18n-html>Allow <strong>Always</strong></span>
+      <span data-i18n="sup.loc.b2b">if you want the route to keep recording with the screen locked or
+      the app in the background.</span></li>
+      <li><span class="lead" data-i18n="sup.loc.b3a" data-i18n-html>If the status shows <em>Searching</em> for a long time,</span>
+      <span data-i18n="sup.loc.b3b">you are indoors or in a street canyon. Step outside; the recorder
+      keeps trying.</span></li>
+      <li><span class="lead" data-i18n="sup.loc.b4a">Low Power Mode can throttle location updates.</span>
+      <span data-i18n="sup.loc.b4b">For a long run, turn it off.</span></li>
     </ul>
   </section>
 
   <section>
-    <h2>The sleep widget</h2>
-    <p>Long-press the Home Screen → <strong>+</strong> → search for Spendly FitFlow → add the
-    bedtime widget. Tap <strong>Start</strong> when you get into bed and <strong>Stop</strong> when
-    you wake. The app imports the night the next time you open it.</p>
+    <h2 data-i18n="sup.widget.title">The sleep widget</h2>
+    <p data-i18n="sup.widget.p1" data-i18n-html>Long-press the Home Screen → <strong>+</strong> →
+    search for Spendly FitFlow → add the bedtime widget. Tap <strong>Start</strong> when you get into
+    bed and <strong>Stop</strong> when you wake. The app imports the night the next time you open
+    it.</p>
     <ul>
-      <li>If the widget says “Not tracking”, the App Group capability is missing on an unsigned
-      build. Install a signed build from the App Store or Xcode.</li>
-      <li>A session running longer than 16 hours is closed automatically at the cap rather than
-      saved as a 30-hour night.</li>
-      <li>A night shorter than an hour is rejected, and the app tells you why.</li>
+      <li data-i18n="sup.widget.b1">If the widget says “Not tracking”, the App Group capability is
+      missing on an unsigned build. Install a signed build from the App Store or Xcode.</li>
+      <li data-i18n="sup.widget.b2">A session running longer than 16 hours is closed automatically at
+      the cap rather than saved as a 30-hour night.</li>
+      <li data-i18n="sup.widget.b3">A night shorter than an hour is rejected, and the app tells you
+      why.</li>
     </ul>
   </section>
 
   <section>
-    <h2>Delete data</h2>
+    <h2 data-i18n="sup.delete.title">Delete data</h2>
     <ul>
-      <li><strong>One record</strong> — swipe it in the app.</li>
-      <li><strong>Everything</strong> — Settings → Data → Delete all data. Meals, exercise,
-      weigh-ins, runs, nights, photos, recordings and custom foods go. The reference food library
-      and your personal targets stay.</li>
-      <li><strong>The app</strong> — deleting Spendly FitFlow deletes its storage, including the
-      database and all media.</li>
+      <li data-i18n="sup.delete.b1" data-i18n-html><strong>One record</strong> — swipe it in the app.</li>
+      <li data-i18n="sup.delete.b2" data-i18n-html><strong>Everything</strong> — Settings → Data →
+      Delete all data. Meals, exercise, weigh-ins, runs, nights, photos, recordings and custom foods
+      go. The reference food library and your personal targets stay.</li>
+      <li data-i18n="sup.delete.b3" data-i18n-html><strong>The app</strong> — deleting Spendly FitFlow
+      deletes its storage, including the database and all media.</li>
     </ul>
-    <p>Nothing is stored anywhere else, so there is nothing to ask us to delete.</p>
+    <p data-i18n="sup.delete.outro">Nothing is stored anywhere else, so there is nothing to ask us to
+    delete.</p>
   </section>
 
   <section>
-    <h2>Language, units and formatting</h2>
-    <p>Settings → App → Language switches between System, English, Deutsch, Français and Español
-    without a relaunch. Dates and decimal separators follow the chosen language, not the device.</p>
-    <p>Running distances and pace follow the metric/imperial switch on the Running tab.</p>
+    <h2 data-i18n="sup.lang.title">Language, units and formatting</h2>
+    <p data-i18n="sup.lang.p1">Settings → App → Language switches between System, English, Deutsch,
+    Français and Español without a relaunch. Dates and decimal separators follow the chosen language,
+    not the device.</p>
+    <p data-i18n="sup.lang.p2">Running distances and pace follow the metric/imperial switch on the
+    Running tab.</p>
   </section>
 
   <section>
-    <h2>Something looks wrong</h2>
-    <h3>The app will not open</h3>
-    <p>You will see a screen saying the database could not be opened. Your existing data has not
-    been deleted. Free some storage and reopen; if it persists, email us with the message shown.</p>
-    <h3>Numbers look impossible</h3>
-    <p>Check Settings → Goals first — a mistyped birth year or weight propagates into every target
-    and estimate. The Goals screen shows the BMR and TDEE it derived, so the error is usually
-    visible there.</p>
-    <h3>Diagnostics</h3>
-    <p>Settings → Data → <strong>Share diagnostics</strong> produces a plain-text log of the current
-    month. It contains no personal data beyond what you typed into the app, and it never leaves the
-    device unless you share it yourself.</p>
+    <h2 data-i18n="sup.wrong.title">Something looks wrong</h2>
+    <h3 data-i18n="sup.wrong.open.t">The app will not open</h3>
+    <p data-i18n="sup.wrong.open.b">You will see a screen saying the database could not be opened.
+    Your existing data has not been deleted. Free some storage and reopen; if it persists, email us
+    with the message shown.</p>
+    <h3 data-i18n="sup.wrong.num.t">Numbers look impossible</h3>
+    <p data-i18n="sup.wrong.num.b">Check Settings → Goals first — a mistyped birth year or weight
+    propagates into every target and estimate. The Goals screen shows the BMR and TDEE it derived, so
+    the error is usually visible there.</p>
+    <h3 data-i18n="sup.wrong.diag.t">Diagnostics</h3>
+    <p data-i18n="sup.wrong.diag.b" data-i18n-html>Settings → Data → <strong>Share diagnostics</strong>
+    produces a plain-text log of the current month. It contains no personal data beyond what you
+    typed into the app, and it never leaves the device unless you share it yourself.</p>
   </section>
 
 </main>
 
 <footer>
   <div class="wrap">
-    <p>Spendly FitFlow · <a href="index.html">Privacy</a> · <a href="insights.html">How insights work</a> · <a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a></p>
-    <p>Nutrition values and calorie estimates are estimates and are not medical advice.</p>
+    <p>Spendly FitFlow · <a href="index.html" data-i18n="nav.privacy">Privacy</a> ·
+      <a href="insights.html" data-i18n="nav.insights">How insights work</a> ·
+      <a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a></p>
+    <p data-i18n="footer.note">Nutrition values and calorie estimates are estimates and are not
+    medical advice.</p>
   </div>
 </footer>
 
+<script src="assets/i18n.js"></script>
 </body>
 </html>

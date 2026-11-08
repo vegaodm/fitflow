@@ -7,121 +7,7 @@
 <meta name="description" content="Spendly FitFlow privacy policy. Meals, runs and nights stay on your device. No account, no server, no analytics.">
 <meta name="theme-color" content="#141334">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%23141334'/%3E%3Ccircle cx='50' cy='50' r='30' fill='none' stroke='%23FF9F45' stroke-width='7' stroke-dasharray='60 12'/%3E%3C/svg%3E">
-<style>
-  :root {
-    --ink: #14161f;
-    --muted: #5b6070;
-    --line: #e4e6ee;
-    --bg: #f6f7fb;
-    --card: #ffffff;
-    --accent: #e07a2f;
-    --night: #141334;
-    --radius: 16px;
-  }
-  * { box-sizing: border-box; }
-  html { -webkit-text-size-adjust: 100%; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--ink);
-    font: 16px/1.65 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  }
-  header {
-    background: var(--night);
-    color: #fff;
-    padding: 40px 20px 32px;
-  }
-  .wrap { max-width: 720px; margin: 0 auto; padding: 0 20px; }
-  header .wrap { padding: 0; }
-  .mark {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 18px;
-  }
-  .mark svg { width: 40px; height: 40px; flex: none; }
-  .mark span { font-weight: 650; letter-spacing: -0.01em; }
-  h1 { font-size: 1.9rem; line-height: 1.2; margin: 0 0 8px; letter-spacing: -0.02em; }
-  header p { margin: 0; color: #b9bdd6; font-size: 0.95rem; }
-  nav {
-    border-bottom: 1px solid var(--line);
-    background: var(--card);
-    position: sticky;
-    top: 0;
-    z-index: 5;
-  }
-  nav .wrap { display: flex; gap: 22px; padding: 14px 20px; overflow-x: auto; }
-  nav a {
-    color: var(--muted);
-    text-decoration: none;
-    font-size: 0.9rem;
-    font-weight: 550;
-    white-space: nowrap;
-  }
-  nav a[aria-current="page"] { color: var(--accent); }
-  main { padding: 32px 0 8px; }
-  section {
-    background: var(--card);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 22px 24px;
-    margin-bottom: 16px;
-  }
-  h2 {
-    font-size: 1.05rem;
-    margin: 0 0 10px;
-    letter-spacing: -0.01em;
-  }
-  h2 .n {
-    display: inline-block;
-    min-width: 1.5em;
-    color: var(--accent);
-    font-variant-numeric: tabular-nums;
-  }
-  p, li { margin: 0 0 10px; }
-  p:last-child, ul:last-child, li:last-child { margin-bottom: 0; }
-  ul { padding-left: 1.15em; }
-  li { margin-bottom: 7px; }
-  strong { font-weight: 650; }
-  a { color: var(--accent); }
-  .lede { font-size: 1.02rem; }
-  .note {
-    border-left: 3px solid var(--accent);
-    background: #fdf6f0;
-    padding: 14px 16px;
-    border-radius: 0 10px 10px 0;
-    margin: 14px 0 0;
-    font-size: 0.95rem;
-  }
-  table { width: 100%; border-collapse: collapse; font-size: 0.94rem; }
-  th, td { text-align: left; padding: 10px 8px; border-bottom: 1px solid var(--line); vertical-align: top; }
-  th { font-weight: 650; color: var(--muted); font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.04em; }
-  tr:last-child td { border-bottom: none; }
-  footer {
-    color: var(--muted);
-    font-size: 0.86rem;
-    padding: 26px 0 46px;
-  }
-  footer .wrap { padding: 0 20px; }
-  footer a { color: var(--muted); }
-  code {
-    font: 0.88em ui-monospace, SFMono-Regular, Menlo, monospace;
-    background: #eef0f6;
-    padding: 1px 5px;
-    border-radius: 5px;
-  }
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --ink: #e9ebf4;
-      --muted: #9aa0b4;
-      --line: #262a3a;
-      --bg: #0b0c15;
-      --card: #14161f;
-    }
-    .note { background: #201a17; }
-    code { background: #22263a; }
-  }
-</style>
+<link rel="stylesheet" href="assets/site.css">
 </head>
 <body>
 
@@ -137,196 +23,240 @@
       </svg>
       <span>Spendly FitFlow</span>
     </div>
-    <h1>Privacy Policy</h1>
-    <p>Effective 8 November 2026 · Applies to Spendly FitFlow for iPhone and iPad</p>
+    <h1 data-i18n="priv.title">Privacy Policy</h1>
+    <p data-i18n="priv.subtitle">Effective 8 November 2026 · Applies to Spendly FitFlow for iPhone and iPad</p>
   </div>
 </header>
 
 <nav>
   <div class="wrap">
-    <a href="index.html" aria-current="page">Privacy</a>
-    <a href="support.html">Support</a>
-    <a href="insights.html">How insights work</a>
+    <a href="index.html" aria-current="page" data-i18n="nav.privacy">Privacy</a>
+    <a href="support.html" data-i18n="nav.support">Support</a>
+    <a href="insights.html" data-i18n="nav.insights">How insights work</a>
+    <span class="spacer"></span>
+    <label class="lang">
+      <span class="visually-hidden" data-i18n="lang.label">Language</span>
+      <select data-lang-picker aria-label="Language">
+        <option value="en">English</option>
+        <option value="de">Deutsch</option>
+        <option value="fr">Français</option>
+        <option value="es">Español</option>
+      </select>
+    </label>
   </div>
 </nav>
 
 <main class="wrap">
 
   <section>
-    <p class="lede"><strong>The short version.</strong> Spendly FitFlow has no account, no sign-in,
-    no server and no analytics. Your meals, runs, nights, photos and voice notes are stored in one
-    database file inside the app's own storage on your device. Nothing is uploaded, because the app
-    has nowhere to upload it to.</p>
-    <div class="note">
+    <p class="lede"><strong data-i18n="priv.short.label">The short version.</strong>
+    <span data-i18n="priv.short.body">Spendly FitFlow has no account, no sign-in, no server and no
+    analytics. Your meals, runs, nights, photos and voice notes are stored in one database file
+    inside the app's own storage on your device. Nothing is uploaded, because the app has nowhere to
+    upload it to.</span></p>
+    <div class="note" data-i18n="priv.short.note">
       We cannot see your data. There is no backend to see it from, and no account that would link
       it to you.
     </div>
   </section>
 
   <section>
-    <h2><span class="n">1</span>What is stored, and where</h2>
-    <p>Everything the app records lives on the device, in the app's own container:</p>
+    <h2><span class="n">1</span> <span data-i18n="priv.s1.title">What is stored, and where</span></h2>
+    <p data-i18n="priv.s1.intro">Everything the app records lives on the device, in the app's own
+    container:</p>
     <table>
       <tr>
-        <th>What</th>
-        <th>Where</th>
+        <th data-i18n="priv.s1.th1">What</th>
+        <th data-i18n="priv.s1.th2">Where</th>
       </tr>
       <tr>
-        <td>Meals, foods, runs, routes, nights, weigh-ins, your personal targets</td>
-        <td>One SQLite database file in the app's Application Support folder</td>
+        <td data-i18n="priv.s1.r1a">Meals, foods, runs, routes, nights, weigh-ins, your personal targets</td>
+        <td data-i18n="priv.s1.r1b">One SQLite database file in the app's Application Support folder</td>
       </tr>
       <tr>
-        <td>Meal photos, voice notes, diagnostics text</td>
-        <td><code>Documents/FitFlow</code> — visible in the Files app, so you can reach your own files</td>
+        <td data-i18n="priv.s1.r2a">Meal photos, voice notes, diagnostics text</td>
+        <td data-i18n="priv.s1.r2b" data-i18n-html><code>Documents/FitFlow</code> — visible in the Files app, so you can reach your own files</td>
       </tr>
       <tr>
-        <td>Preferences (language, reminders, whether onboarding is done)</td>
-        <td>iOS UserDefaults, on the device</td>
+        <td data-i18n="priv.s1.r3a">Preferences (language, reminders, whether onboarding is done)</td>
+        <td data-i18n="priv.s1.r3b">iOS UserDefaults, on the device</td>
       </tr>
       <tr>
-        <td>The bedtime widget's Start/Stop timestamps</td>
-        <td>A shared UserDefaults container readable only by the app and its own widget</td>
+        <td data-i18n="priv.s1.r4a">The bedtime widget's Start/Stop timestamps</td>
+        <td data-i18n="priv.s1.r4b">A shared UserDefaults container readable only by the app and its own widget</td>
       </tr>
     </table>
-    <p style="margin-top:14px">None of this leaves the device. The app makes no network request of
-    its own — there is no code in it that opens a connection to a server.</p>
+    <p style="margin-top:14px" data-i18n="priv.s1.outro">None of this leaves the device. The app
+    makes no network request of its own — there is no code in it that opens a connection to a
+    server.</p>
   </section>
 
   <section>
-    <h2><span class="n">2</span>Permissions, and why each one is asked for</h2>
+    <h2><span class="n">2</span> <span data-i18n="priv.s2.title">Permissions, and why each one is asked for</span></h2>
     <ul>
-      <li><strong>Location (including while in use in the background).</strong> Used only while you
-      are recording a run, to draw the route and compute distance, pace and elevation. It keeps
-      recording with the screen locked so a run is not cut short. It is never used at any other
-      time, and it is never sent anywhere.</li>
-      <li><strong>Motion &amp; fitness activity type.</strong> Only to tell iOS the location session
-      is a workout, so it is not throttled.</li>
-      <li><strong>Camera.</strong> Only when you choose to photograph a meal. The photo is saved to
-      the app's own folder on the device.</li>
-      <li><strong>Microphone.</strong> Only when you choose to attach a voice note to a meal entry.
-      The recording is saved to the app's own folder on the device.</li>
-      <li><strong>Notifications.</strong> Only for the optional bedtime reminder you can switch on.
-      Reminders are scheduled locally by iOS.</li>
-      <li><strong>Live Activities.</strong> Shows the current run's distance, pace and elapsed time
-      on the Lock Screen.</li>
-      <li><strong>Files access.</strong> Only when you export or import a backup file you picked
-      yourself.</li>
+      <li><strong data-i18n="priv.s2.loc.t">Location (including while in use in the background).</strong>
+      <span data-i18n="priv.s2.loc.b">Used only while you are recording a run, to draw the route and
+      compute distance, pace and elevation. It keeps recording with the screen locked so a run is
+      not cut short. It is never used at any other time, and it is never sent anywhere.</span></li>
+
+      <li><strong data-i18n="priv.s2.motion.t">Motion &amp; fitness activity type.</strong>
+      <span data-i18n="priv.s2.motion.b">Only to tell iOS the location session is a workout, so it
+      is not throttled.</span></li>
+
+      <li><strong data-i18n="priv.s2.cam.t">Camera.</strong>
+      <span data-i18n="priv.s2.cam.b">Only when you choose to photograph a meal. The photo is saved
+      to the app's own folder on the device.</span></li>
+
+      <li><strong data-i18n="priv.s2.mic.t">Microphone.</strong>
+      <span data-i18n="priv.s2.mic.b">Only when you choose to attach a voice note to a meal entry.
+      The recording is saved to the app's own folder on the device.</span></li>
+
+      <li><strong data-i18n="priv.s2.notif.t">Notifications.</strong>
+      <span data-i18n="priv.s2.notif.b">Only for the optional bedtime reminder you can switch on.
+      Reminders are scheduled locally by iOS.</span></li>
+
+      <li><strong data-i18n="priv.s2.live.t">Live Activities.</strong>
+      <span data-i18n="priv.s2.live.b">Shows the current run's distance, pace and elapsed time on
+      the Lock Screen.</span></li>
+
+      <li><strong data-i18n="priv.s2.files.t">Files access.</strong>
+      <span data-i18n="priv.s2.files.b">Only when you export or import a backup file you picked
+      yourself.</span></li>
     </ul>
-    <p>You can revoke any of these in iOS Settings at any time. The features that need them stop
-    working; the rest of the app keeps working, and your existing data is untouched.</p>
+    <p data-i18n="priv.s2.outro">You can revoke any of these in iOS Settings at any time. The
+    features that need them stop working; the rest of the app keeps working, and your existing data
+    is untouched.</p>
   </section>
 
   <section>
-    <h2><span class="n">3</span>The optional AI lookup — the one time data leaves the app</h2>
-    <p>The food lookup screen offers to hand a question to an AI assistant. You choose which one,
-    and you choose it in Settings. This is the only path by which anything you typed leaves the
-    app, and it is opt-in every single time:</p>
+    <h2><span class="n">3</span> <span data-i18n="priv.s3.title">The optional AI lookup — the one time data leaves the app</span></h2>
+    <p data-i18n="priv.s3.intro">The food lookup screen offers to hand a question to an AI
+    assistant. You choose which one, and you choose it in Settings. This is the only path by which
+    anything you typed leaves the app, and it is opt-in every single time:</p>
     <ul>
-      <li>The app opens <strong>another app on your device</strong> — ChatGPT, Claude, Perplexity,
-      Copilot, Brave Search, Pocket LLM, Pocket LLM G or a service you configure — using a URL
-      scheme, with your question in the link. It can also copy the question to the clipboard.</li>
-      <li>Spendly FitFlow makes <strong>no network request itself</strong> and stores
-      <strong>no API key</strong>.</li>
-      <li>Once the question is handed over, the receiving service's own privacy policy applies, not
-      this one. That service may be operated by a different company, in a different country, and
-      may keep the question.</li>
-      <li>The reply is pasted back by you. The app parses it locally to fill in a food's nutrition;
-      nothing is sent to verify it.</li>
+      <li data-i18n="priv.s3.b1" data-i18n-html>The app opens <strong>another app on your
+      device</strong> — ChatGPT, Claude, Perplexity, Copilot, Brave Search, Pocket LLM, Pocket LLM G
+      or a service you configure — using a URL scheme, with your question in the link. It can also
+      copy the question to the clipboard.</li>
+      <li data-i18n="priv.s3.b2" data-i18n-html>Spendly FitFlow makes <strong>no network request
+      itself</strong> and stores <strong>no API key</strong>.</li>
+      <li data-i18n="priv.s3.b3">Once the question is handed over, the receiving service's own
+      privacy policy applies, not this one. That service may be operated by a different company, in
+      a different country, and may keep the question.</li>
+      <li data-i18n="priv.s3.b4">The reply is pasted back by you. The app parses it locally to fill
+      in a food's nutrition; nothing is sent to verify it.</li>
     </ul>
-    <p>If you never use the lookup screen, the app never contacts anything.</p>
+    <p data-i18n="priv.s3.outro">If you never use the lookup screen, the app never contacts
+    anything.</p>
   </section>
 
   <section>
-    <h2><span class="n">4</span>Purchases</h2>
-    <p>Lifetime Membership is a one-time, non-consumable in-app purchase. The transaction is
-    handled entirely by Apple. We never see your name, your Apple Account, your payment method or
-    your address. The app only receives from Apple a signed confirmation that the purchase exists,
-    and keeps a local flag so it can draw the right screen offline.</p>
-    <p>Apple's handling of the purchase is covered by Apple's own privacy policy.</p>
+    <h2><span class="n">4</span> <span data-i18n="priv.s4.title">Purchases</span></h2>
+    <p data-i18n="priv.s4.p1">Lifetime Membership is a one-time, non-consumable in-app purchase. The
+    transaction is handled entirely by Apple. We never see your name, your Apple Account, your
+    payment method or your address. The app only receives from Apple a signed confirmation that the
+    purchase exists, and keeps a local flag so it can draw the right screen offline.</p>
+    <p data-i18n="priv.s4.p2">Apple's handling of the purchase is covered by Apple's own privacy
+    policy.</p>
   </section>
 
   <section>
-    <h2><span class="n">5</span>What we do not do</h2>
+    <h2><span class="n">5</span> <span data-i18n="priv.s5.title">What we do not do</span></h2>
     <ul>
-      <li>No account, no email address, no phone number collected.</li>
-      <li>No analytics, no crash reporting, no telemetry.</li>
-      <li>No advertising, no advertising identifier, no attribution SDK.</li>
-      <li>No third-party SDKs of any kind.</li>
-      <li>No tracking across apps or websites, and no data sold or shared.</li>
-      <li>No HealthKit access. The app reads no health data and writes none.</li>
+      <li data-i18n="priv.s5.b1">No account, no email address, no phone number collected.</li>
+      <li data-i18n="priv.s5.b2">No analytics, no crash reporting, no telemetry.</li>
+      <li data-i18n="priv.s5.b3">No advertising, no advertising identifier, no attribution SDK.</li>
+      <li data-i18n="priv.s5.b4">No third-party SDKs of any kind.</li>
+      <li data-i18n="priv.s5.b5">No tracking across apps or websites, and no data sold or shared.</li>
+      <li data-i18n="priv.s5.b6">No HealthKit access. The app reads no health data and writes
+      none.</li>
     </ul>
-    <p>The app's privacy manifest declares exactly one accessed API category — UserDefaults, reason
-    code <code>CA92.1</code> — and no collected data types.</p>
+    <p data-i18n="priv.s5.outro" data-i18n-html>The app's privacy manifest declares exactly one
+    accessed API category — UserDefaults, reason code <code>CA92.1</code> — and no collected data
+    types.</p>
   </section>
 
   <section>
-    <h2><span class="n">6</span>Backups, and where they go</h2>
-    <p>Settings → Backup copies the whole database file to a location you pick in the Files app.
-    That copy is yours: if you save it to iCloud Drive or another synced folder, it is then subject
-    to that provider's terms, because you put it there. If you save it locally, it stays local.</p>
-    <p>The app also keeps short-lived copies in its own temporary folders while a backup is being
-    written or restored, and clears them afterwards.</p>
+    <h2><span class="n">6</span> <span data-i18n="priv.s6.title">Backups, and where they go</span></h2>
+    <p data-i18n="priv.s6.p1">Settings → Backup copies the whole database file to a location you
+    pick in the Files app. That copy is yours: if you save it to iCloud Drive or another synced
+    folder, it is then subject to that provider's terms, because you put it there. If you save it
+    locally, it stays local.</p>
+    <p data-i18n="priv.s6.p2">The app also keeps short-lived copies in its own temporary folders
+    while a backup is being written or restored, and clears them afterwards.</p>
   </section>
 
   <section>
-    <h2><span class="n">7</span>Deleting your data</h2>
+    <h2><span class="n">7</span> <span data-i18n="priv.s7.title">Deleting your data</span></h2>
     <ul>
-      <li><strong>Delete individual records</strong> in the app: swipe a meal, a run or a night.</li>
-      <li><strong>Delete everything</strong> in Settings → Data → Delete all data. This removes your
-      meals, exercise, weigh-ins, runs, nights, photos, recordings and custom foods. The reference
-      food library and your personal targets stay.</li>
-      <li><strong>Delete the app.</strong> Removing Spendly FitFlow from the device deletes its
-      container, and with it the database and every media file.</li>
+      <li><strong data-i18n="priv.s7.b1.t">Delete individual records</strong>
+      <span data-i18n="priv.s7.b1.b">in the app: swipe a meal, a run or a night.</span></li>
+      <li><strong data-i18n="priv.s7.b2.t">Delete everything</strong>
+      <span data-i18n="priv.s7.b2.b">in Settings → Data → Delete all data. This removes your meals,
+      exercise, weigh-ins, runs, nights, photos, recordings and custom foods. The reference food
+      library and your personal targets stay.</span></li>
+      <li><strong data-i18n="priv.s7.b3.t">Delete the app.</strong>
+      <span data-i18n="priv.s7.b3.b">Removing Spendly FitFlow from the device deletes its container,
+      and with it the database and every media file.</span></li>
     </ul>
-    <p>Because we hold nothing, there is no separate deletion request to make. There is nothing on
-    our side to erase.</p>
+    <p data-i18n="priv.s7.outro">Because we hold nothing, there is no separate deletion request to
+    make. There is nothing on our side to erase.</p>
   </section>
 
   <section>
-    <h2><span class="n">8</span>Your rights</h2>
-    <p>Privacy laws such as the GDPR and the CCPA give you rights to access, correct, export and
-    erase personal data held about you, and to object to its processing. In this app all of that
-    data is already in your hands, on your device:</p>
+    <h2><span class="n">8</span> <span data-i18n="priv.s8.title">Your rights</span></h2>
+    <p data-i18n="priv.s8.intro">Privacy laws such as the GDPR and the CCPA give you rights to
+    access, correct, export and erase personal data held about you, and to object to its processing.
+    In this app all of that data is already in your hands, on your device:</p>
     <ul>
-      <li><strong>Access and export</strong> — Settings → Backup writes the whole database out.</li>
-      <li><strong>Correct</strong> — edit any record in the app.</li>
-      <li><strong>Erase</strong> — Settings → Data → Delete all data, or delete the app.</li>
-      <li><strong>Object</strong> — you can use the app with no network access at all.</li>
+      <li><strong data-i18n="priv.s8.b1.t">Access and export</strong> —
+      <span data-i18n="priv.s8.b1.b">Settings → Backup writes the whole database out.</span></li>
+      <li><strong data-i18n="priv.s8.b2.t">Correct</strong> —
+      <span data-i18n="priv.s8.b2.b">edit any record in the app.</span></li>
+      <li><strong data-i18n="priv.s8.b3.t">Erase</strong> —
+      <span data-i18n="priv.s8.b3.b">Settings → Data → Delete all data, or delete the app.</span></li>
+      <li><strong data-i18n="priv.s8.b4.t">Object</strong> —
+      <span data-i18n="priv.s8.b4.b">you can use the app with no network access at all.</span></li>
     </ul>
-    <p>We do not process your personal data on any server, so there is no processing to object to
-    beyond what happens on your own device.</p>
+    <p data-i18n="priv.s8.outro">We do not process your personal data on any server, so there is no
+    processing to object to beyond what happens on your own device.</p>
   </section>
 
   <section>
-    <h2><span class="n">9</span>Children</h2>
-    <p>Spendly FitFlow is not directed at children under 13. It collects no personal information
-    from anyone, of any age.</p>
+    <h2><span class="n">9</span> <span data-i18n="priv.s9.title">Children</span></h2>
+    <p data-i18n="priv.s9.body">Spendly FitFlow is not directed at children under 13. It collects
+    no personal information from anyone, of any age.</p>
   </section>
 
   <section>
-    <h2><span class="n">10</span>Changes to this policy</h2>
-    <p>If a future version of the app changes what it stores or where it sends it, this page will be
-    updated before that version ships, and the effective date above will change. Because the app
-    has no account, we cannot email you about it — the current version of this page is always the
-    one that applies.</p>
+    <h2><span class="n">10</span> <span data-i18n="priv.s10.title">Changes to this policy</span></h2>
+    <p data-i18n="priv.s10.body">If a future version of the app changes what it stores or where it
+    sends it, this page will be updated before that version ships, and the effective date above will
+    change. Because the app has no account, we cannot email you about it — the current version of
+    this page is always the one that applies.</p>
   </section>
 
   <section>
-    <h2><span class="n">11</span>Contact</h2>
-    <p>Questions about this policy, or about what the app does with your data:</p>
+    <h2><span class="n">11</span> <span data-i18n="priv.s11.title">Contact</span></h2>
+    <p data-i18n="priv.s11.intro">Questions about this policy, or about what the app does with your
+    data:</p>
     <p><a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a></p>
-    <p>We answer in English. Please include your iOS version and the app version from Settings →
-    About, which makes a specific question much faster to answer.</p>
+    <p data-i18n="priv.s11.outro">We answer in English. Please include your iOS version and the app
+    version from Settings → About, which makes a specific question much faster to answer.</p>
   </section>
 
 </main>
 
 <footer>
   <div class="wrap">
-    <p>Spendly FitFlow · <a href="support.html">Support</a> · <a href="insights.html">How insights work</a> · <a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a></p>
-    <p>Nutrition values and calorie estimates are estimates and are not medical advice.</p>
+    <p>Spendly FitFlow · <a href="support.html" data-i18n="nav.support">Support</a> ·
+      <a href="insights.html" data-i18n="nav.insights">How insights work</a> ·
+      <a href="mailto:vegaodm@outlook.com">vegaodm@outlook.com</a></p>
+    <p data-i18n="footer.note">Nutrition values and calorie estimates are estimates and are not
+    medical advice.</p>
   </div>
 </footer>
 
+<script src="assets/i18n.js"></script>
 </body>
 </html>
