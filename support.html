@@ -75,9 +75,9 @@
       <li data-i18n="sup.start.b3" data-i18n-html><strong>Sleep</strong> (right) — log a night and
       see what moves it.</li>
     </ul>
-    <p data-i18n="sup.start.settings" data-i18n-html>Settings is the <strong>gear in the middle of
-    the top bar</strong> on the Food tab. It is not a fourth tab: the three tab slots belong to the
-    three features.</p>
+    <p data-i18n="sup.start.settings" data-i18n-html>Settings is the <strong>gear at the right end of
+    the top bar</strong> on the Food tab; Stats sits at the other end. It is not a fourth tab: the
+    three tab slots belong to the three features.</p>
     <h3 data-i18n="sup.start.first.t">First thing to do</h3>
     <p data-i18n="sup.start.first.b">Open Settings → Goals and set your sex, birth year, height and
     weight. Those four numbers are what turn a run into calories and a goal into a daily target.
@@ -115,14 +115,33 @@
     database</strong> — meals, runs and nights in one SQLite file — to a location you pick in the
     Files app. Restoring replaces the current database with that file, so back up before you restore
     something old.</p>
-    <div class="note" data-i18n="sup.backup.note">The running tab no longer has its own import or
-    export. A second path over the same file would race this one, and the older formats are not
-    compatible with this app's database.</div>
+    <div class="note" data-i18n="sup.backup.note">The running tab still has no import of its own
+    — one path over the shared file is enough. There is one rescue hatch for the old app, and it
+    lives here: your RunningAir runs can be imported from Settings → Backup. The next section has
+    the steps.</div>
     <p style="margin-top:14px"><span data-i18n="sup.backup.p2a">Your photos and voice notes are
     separate files under</span>
     <span class="path">Files → On My iPhone → FitFlow → FitFlow</span>.
     <span data-i18n="sup.backup.p2b">A database backup does not include them, so copy that folder as
     well if you want them.</span></p>
+  </section>
+
+  <section>
+    <h2 data-i18n="sup.runningair.title">Importing your runs from RunningAir</h2>
+    <p data-i18n="sup.runningair.p1" data-i18n-html>Runs recorded in RunningAir can be brought
+    across. In RunningAir, tap the share icon in the top bar (<em>Export Database</em>) and save the
+    file somewhere you can reach. Then in Spendly FitFlow open <strong>Settings → Backup → Import
+    RunningAir runs</strong> and pick that <code>running.sqlite</code>.</p>
+    <p data-i18n="sup.runningair.p2">Only runs are copied: the route, its points and the post-run
+    notes. Your meals, your nights and your profile stay exactly as they are, and a run you already
+    have is skipped — picking the same file twice writes nothing twice.</p>
+    <p data-i18n="sup.runningair.p3">A recording that was never finished is not a run, so leftover
+    ones are counted and not imported.</p>
+    <div class="note" data-i18n="sup.runningair.note">Imported runs carry no calorie figure.
+    RunningAir never measured one, and this app will not invent one from today's profile.</div>
+    <p data-i18n="sup.runningair.p4">The import sits inside Settings → Backup, so it is part of the
+    Lifetime Membership like the rest of that screen. Nothing is uploaded: the file you pick is read
+    on your device, and a file that is not a RunningAir database is refused with a message.</p>
   </section>
 
   <section>
@@ -202,18 +221,36 @@
   </section>
 
   <section>
-    <h2 data-i18n="sup.widget.title">The sleep widget</h2>
+    <h2 data-i18n="sup.widget.title">The widgets</h2>
     <p data-i18n="sup.widget.p1" data-i18n-html>Long-press the Home Screen → <strong>+</strong> →
-    search for Spendly FitFlow → add the bedtime widget. Tap <strong>Start</strong> when you get into
-    bed and <strong>Stop</strong> when you wake. The app imports the night the next time you open
-    it.</p>
+    search for Spendly FitFlow → pick a widget. Three are available, and none of them opens the
+    database: each draws what the app last wrote into the shared container.</p>
     <ul>
-      <li data-i18n="sup.widget.b1">If the widget says “Not tracking”, the App Group capability is
+      <li><span class="lead" data-i18n="sup.widget.sleep.a">Bedtime</span>
+      <span data-i18n="sup.widget.sleep.b">Tap <strong>Start</strong> when you get into bed and
+      <strong>Stop</strong> when you wake; <strong>Add details</strong> opens the night's form. The
+      app imports the night the next time you open it.</span></li>
+      <li><span class="lead" data-i18n="sup.widget.meal.a">Add meal</span>
+      <span data-i18n="sup.widget.meal.b">Shows what is left of today's calories and how many meals
+      are logged. Tapping it opens the meal form.</span></li>
+      <li><span class="lead" data-i18n="sup.widget.run.a">Run controls</span>
+      <span data-i18n="sup.widget.run.b"><strong>Start</strong> opens the app, because only the app
+      can begin a GPS session. While a run is recording, <strong>Pause</strong> and
+      <strong>Finish</strong> work straight from the Home Screen; once it is paused, those buttons
+      open the app instead, where you can resume or finish. The small size keeps the clock and two
+      glyph buttons; the medium one spells both out.</span></li>
+    </ul>
+    <p data-i18n="sup.widget.quick" data-i18n-html>Long-press the app icon for
+    <strong>Add meal</strong> — it opens the same form as the widget.</p>
+    <ul>
+      <li data-i18n="sup.widget.b1">If a widget says “Not tracking”, the App Group capability is
       missing on an unsigned build. Install a signed build from the App Store or Xcode.</li>
       <li data-i18n="sup.widget.b2">A session running longer than 16 hours is closed automatically at
       the cap rather than saved as a 30-hour night.</li>
       <li data-i18n="sup.widget.b3">A night shorter than an hour is rejected, and the app tells you
       why.</li>
+      <li data-i18n="sup.widget.b4">A run card that keeps counting after the app was force-quit is
+      stale: the recorder is what publishes it, so opening the app corrects it.</li>
     </ul>
   </section>
 

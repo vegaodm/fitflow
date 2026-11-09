@@ -82,8 +82,10 @@
         <td data-i18n="priv.s1.r3b">iOS UserDefaults, on the device</td>
       </tr>
       <tr>
-        <td data-i18n="priv.s1.r4a">The bedtime widget's Start/Stop timestamps</td>
-        <td data-i18n="priv.s1.r4b">A shared UserDefaults container readable only by the app and its own widget</td>
+        <td data-i18n="priv.s1.r4a">What the Home Screen widgets show: a night's Start/Stop
+        timestamps, today's calorie total, and which phase a run is in</td>
+        <td data-i18n="priv.s1.r4b">A shared UserDefaults container readable only by the app and its
+        own widgets. The widgets never open the database.</td>
       </tr>
     </table>
     <p style="margin-top:14px" data-i18n="priv.s1.outro">None of this leaves the device. The app
@@ -120,8 +122,8 @@
       the Lock Screen.</span></li>
 
       <li><strong data-i18n="priv.s2.files.t">Files access.</strong>
-      <span data-i18n="priv.s2.files.b">Only when you export or import a backup file you picked
-      yourself.</span></li>
+      <span data-i18n="priv.s2.files.b">Only when you export or import a backup file, or import an
+      old RunningAir database, that you picked yourself.</span></li>
     </ul>
     <p data-i18n="priv.s2.outro">You can revoke any of these in iOS Settings at any time. The
     features that need them stop working; the rest of the app keeps working, and your existing data
@@ -184,6 +186,8 @@
     locally, it stays local.</p>
     <p data-i18n="priv.s6.p2">The app also keeps short-lived copies in its own temporary folders
     while a backup is being written or restored, and clears them afterwards.</p>
+    <p data-i18n="priv.s6.p3">Importing an old RunningAir database reads that file once and writes
+    only its runs into this database. Nothing else from it is kept.</p>
   </section>
 
   <section>
